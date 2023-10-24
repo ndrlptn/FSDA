@@ -11,21 +11,16 @@ struct Node
 struct up_list
 {
     Node* first;
-    Node* last;
 
     up_list() : first(nullptr) {}
 
-    void list_ini()
-    {
-
-    }
     bool is_empty()
     {
         return first == nullptr;
     }
 
 
-    void push_back(int val)
+    void push(int val)
     {
         Node* ptr = new Node(val);
 
@@ -68,6 +63,14 @@ struct up_list
     }
 
 
+    Node* searchVal(int _val)
+    {
+        Node* arrow = first;
+        while (arrow && (arrow->val != _val))
+            return arrow;
+        if (!arrow)
+            return nullptr;
+    }
     void print()
     {
         int i = 1;
@@ -81,29 +84,58 @@ struct up_list
     }
 
 
-    void delete_elements(int val)
+    void delete_elements(int _val)
     {
-        Node* arrow = first;
-        Node* left = first;
+        if (!is_empty())
+        {
+            Node* left = first;
+            Node* arrow = left->next;
+            Node* memory;
+
+            while (first && (first->val == _val))
+            {
+                memory = first;
+                first = first->next;
+                delete(memory);
+
+                left = first;
+                if (left)
+                    arrow = left->next;
+            }
+            while (arrow)
+            {
+                if (arrow->val == _val)
+                {
+                    memory = arrow;
+                    left->next = arrow->next;
+                    delete(memory);
+
+                    if (left)
+                        arrow = left->next;
+                }
+                else
+                {
+                    left = left->next;
+                    if (left)
+                        arrow = left->next;
+                }
+            }
+        }
+    }
+    
+
+    void deleteList()
+    {
+        Node* arrow = first->next;
+        Node* memory = arrow;
 
         while (arrow)
         {
-            if ((arrow->val == val) && (arrow == first))
-            {
-                first = first->next;
-            }
-            else
-                if (arrow->val == val)
-                {
-                    left->next = arrow->next;
-                    arrow = arrow -> next;
-                }
-                else 
-                {
-                    left = arrow;
-                    arrow = arrow->next;
-                }
+            memory = arrow;
+            arrow = arrow->next;
+            delete(memory);
         }
+        first = nullptr;
     }
 };
 //-----------------------------------------------
@@ -130,7 +162,7 @@ int main()
         std::cout << "Input number: ";
         std::cin >> input_val;
 
-        L.push_back(input_val);
+        L.push(input_val);
     }
 
     L.print();
@@ -152,10 +184,14 @@ int main()
         std::cout << "Input number: ";
         std::cin >> input_val;
 
-        L1.push_back(input_val);
+        L1.push(input_val);
     }
     Result = substraction(L, L1);
     Result.print();
+
+    Result.deleteList();
+    L.deleteList();
+    L1.deleteList();
 
     return 0;
 }
@@ -165,13 +201,14 @@ int main()
 up_list substraction(up_list list1, up_list list2)
 {
     Node* arrow2 = list2.first;
+    up_list result = list1;
 
     while (arrow2)
     {
-        list1.delete_elements(arrow2->val);
+        result.delete_elements(arrow2->val);
         arrow2 = arrow2->next;
     }
 
-    return list1;
+    return result;
 }
 
