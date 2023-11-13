@@ -1,5 +1,6 @@
 ﻿#include <iostream>
 #include <string>
+#include <fstream>
 
 struct Key
 {
@@ -364,15 +365,54 @@ struct Tree
         if(tnode->repeats.searchVal(listElem->fio))
         return listElem;                                    
     }
+
+    void deleteTree(treeNode* subtree)
+    {
+        treeNode* arrow;
+        treeNode* memory;
+
+        if (subtree)
+        {
+            deleteTree(subtree->left);
+            deleteTree(subtree->right);
+
+            delete(subtree);
+        }
+    }
+
+    void goThrough(treeNode* subtree)//обход слева направо
+    {
+        if (subtree)
+        {
+            goThrough(subtree->left);
+            goThrough(subtree->right);
+
+            //doSmth();
+        }
+    }
+
+    void print(treeNode* subtree, int space = 0) {
+        if (subtree)
+        {
+            int count = 2;
+            space += count;
+            print(subtree->right, space);
+            for (int i = count; i < space; ++i)
+                std::cout << "  ";
+            std::cout << root->fio.surname << '\n';
+            print(root->left, space);
+        }
+    }
 };
-
-
-
-
 
 
 int main()
 {
+    std::string path = "input.txt";
+    auto tree = Tree();
+    int count = 0;
+
+    std::ifstream fin("input.txt");
     
 
     return 0;
