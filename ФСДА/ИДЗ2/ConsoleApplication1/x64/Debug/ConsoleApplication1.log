@@ -1,7 +1,6 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(531,5): warning MSB8028: промежуточный каталог (x64\Debug\) содержит файлы, которые используются совместно с другим проектом (ConsoleApplication1.vcxproj).  Это может привести к ошибкам очистки и перестроения.
   IDZ2.cpp
-D:\!Programming\ФСДА\ИДЗ2\ConsoleApplication1\IDZ2.cpp(209,57): warning C4267: =: преобразование из "size_t" в "int"; возможна потеря данных
-D:\!Programming\ФСДА\ИДЗ2\ConsoleApplication1\IDZ2.cpp(211,49): warning C4267: =: преобразование из "size_t" в "int"; возможна потеря данных
-D:\!Programming\ФСДА\ИДЗ2\ConsoleApplication1\IDZ2.cpp(337,51): warning C4267: =: преобразование из "size_t" в "int"; возможна потеря данных
-D:\!Programming\ФСДА\ИДЗ2\ConsoleApplication1\IDZ2.cpp(339,45): warning C4267: =: преобразование из "size_t" в "int"; возможна потеря данных
-  ConsoleApplication1.vcxproj -> D:\!Programming\ФСДА\ИДЗ2\ConsoleApplication1\x64\Debug\IDZ2.exe
+D:\!Programming\ФСДА\FSDA\ИДЗ2\ConsoleApplication1\IDZ2.cpp(305): warning C4715: Tree::searchElem: значение возвращается не при всех путях выполнения
+D:\!Programming\ФСДА\FSDA\ИДЗ2\ConsoleApplication1\IDZ2.cpp(265): warning C4715: Tree::search_max_in_left_subtree: значение возвращается не при всех путях выполнения
+D:\!Programming\ФСДА\FSDA\ИДЗ2\ConsoleApplication1\IDZ2.cpp(207): warning C4715: Tree::compare: значение возвращается не при всех путях выполнения
+  ConsoleApplication1.vcxproj -> D:\!Programming\ФСДА\FSDA\ИДЗ2\ConsoleApplication1\x64\Debug\IDZ2.exe

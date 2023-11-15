@@ -1,0 +1,73 @@
+            Zaynulin
+
+        Vorobev
+
+    Ushnitskiy
+
+Stepachev
+
+                Shaydurov
+
+            Semenova
+
+        Lopatin
+
+                Kiselev
+
+            Dyadkin
+
+    Annin
+
+-----------------check_delete-------------------
+            Zaynulin
+
+        Vorobev
+
+    Ushnitskiy
+
+Shaydurov
+
+            Semenova
+
+        Lopatin
+
+                Kiselev
+
+            Dyadkin
+
+    Annin
+
+--------------check_add_after_delete-------------
+            Zaynulin
+
+        Vorobev
+
+    Ushnitskiy
+
+        Stepachev
+
+Shaydurov
+
+            Semenova
+
+        Lopatin
+
+                Kiselev
+
+            Dyadkin
+
+    Annin
+
+----------check_walk_from_left_to_right----------
+Annin Georgiy Dmitrievic
+Dyadkin Andrey Sergeevic
+Kiselev Pavel Antonovic
+Lopatin Andrey Olegovic
+Semenova Alina Aleksandrovna
+Shaydurov Stepan Egorovic
+Stepachev Rodion Eduardovic
+Ushnitskiy Timur Innokentievic
+Vorobev Victor Aleksandrovich
+Zaynulin Valentin Sergeevic
+---------------check_repeats_list----------------
+10, 11, 12, 13, 14, 15, 16, 17
