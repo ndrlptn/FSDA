@@ -25,15 +25,15 @@ Stepachev
 
     Ushnitskiy
 
-Shaydurov
+Stepachev
+
+                Shaydurov
 
             Semenova
 
         Lopatin
 
-                Kiselev
-
-            Dyadkin
+            Kiselev
 
     Annin
 
@@ -44,17 +44,17 @@ Shaydurov
 
     Ushnitskiy
 
-        Stepachev
+Stepachev
 
-Shaydurov
+                Shaydurov
 
             Semenova
 
         Lopatin
 
-                Kiselev
+            Kiselev
 
-            Dyadkin
+                Dyadkin
 
     Annin
 
@@ -70,4 +70,4 @@ Ushnitskiy Timur Innokentievic
 Vorobev Victor Aleksandrovich
 Zaynulin Valentin Sergeevic
 ---------------check_repeats_list----------------
-10, 11, 12, 13, 14, 15, 16, 17
+1

@@ -271,7 +271,7 @@ struct Tree
             Node* arrow = root;
             if ((arrow->fio.surname == _fio.surname) && (arrow->fio.name == _fio.name) && (arrow->fio.fathername == _fio.fathername))
                 return arrow;
-            while ((arrow->fio.surname != _fio.surname) && (arrow->fio.name != _fio.name) && (arrow->fio.fathername != _fio.fathername))
+            while ((arrow->fio.surname != _fio.surname) || (arrow->fio.name != _fio.name) || (arrow->fio.fathername != _fio.fathername))
             {
                 if (!arrow)
                     return nullptr;
@@ -285,11 +285,11 @@ struct Tree
                     break;
 
                 case'<':
-                    arrow = arrow->left;
+                    arrow = arrow->right;
                     break;
 
                 case '>':
-                    arrow = arrow->right;
+                    arrow = arrow->left;
                     break;
 
                 default:
@@ -298,6 +298,7 @@ struct Tree
                     break;
                 }
             }
+            return arrow;
         }
         else
             return nullptr;
@@ -413,9 +414,9 @@ int main()
 
     fout << "-----------------check_delete-------------------\n";
     
-    fio.name = "Rodion";
-    fio.surname = "Stepachev";
-    fio.fathername = "Eduardovic";
+    fio.name = "Andrey";
+    fio.surname = "Dyadkin";
+    fio.fathername = "Sergeevic";
 
     tree.deleteElem(fio);
     
@@ -429,9 +430,9 @@ int main()
     tree.goThrough_f(tree.root, fout);
 
     fout << "---------------check_repeats_list----------------\n";
-    fio.name = "Stepan";
-    fio.surname = "Shaydurov";
-    fio.fathername = "Egorovic";
+    fio.name = "Andrey";
+    fio.surname = "Dyadkin";
+    fio.fathername = "Sergeevic";
 
     tree.searchElem(fio)->repeats.print_f(fout);//
     fout.close();
